@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django_datatables_view.base_datatable_view import BaseDatatableView
 
-# Create your views here.
+from event.models import Result
+
+
+class ResultDataTable(BaseDatatableView):
+    model = Result
+    columns = ['name', 'time', 'distance']
