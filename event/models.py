@@ -10,9 +10,8 @@ class Event(models.Model):
 
 
 class Result(models.Model):
-    name = models.CharField('Event Name', max_length=64)
-    event = models.ForeignKey(Event, on_delete=models.CASCADE, null=False, blank=False,
-                              limit_choices_to={'event_type': 'Race'})
+    name = models.CharField('Race Name', max_length=64)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, null=False, blank=False)
     time = models.CharField(blank=True, null=True,
                             max_length=9, help_text='MM:SS.mmm',
                             validators=[RegexValidator(r'^(\d){2}:(\d){2}.(\d){3}$')])

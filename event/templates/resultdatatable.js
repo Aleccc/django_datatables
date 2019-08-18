@@ -6,6 +6,6 @@ $(document).ready(function() {
         "bProcessing": true,
         "bServerSide": true,
         "bStateSave": true,
-        "sAjaxSource": DATA_TABLE_URL
+        "sAjaxSource": DATA_TABLE_URL,
     });
 });

@@ -1,0 +1,37 @@
+{% load i18n staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Data Table</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.css" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+        var dt_table = $('.datatable').DataTable({
+            "bFilter": true,
+            "iDisplayLength" : 10,
+            "bAutoWidth": true,
+            "processing": true,
+            "serverSide": true,
+            "StateSave": true,
+            "ajax": "{% url "event:resultdatatable" %}",
+        });
+    });
+    </script>
+</head>
+<body>
+    <table class="datatable">
+        <thead>
+            <th>{% trans "Event" %}</th>
+            <th>{% trans "Race" %}</th>
+            <th>{% trans "Time" %}</th>
+            <th>{% trans "Distance" %}</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>
