@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Data Table</title>
+    <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <script src="{% static "resultdatatable.js" %}"></script>
+    <script type="text/javascript">
+        var DATA_TABLE_URL = '{% url "resultdatatable" %}';
+    </script>
+</head>
+<body>
+    <table class="datatable">
+        <thead>
+            <th>{% trans "Name" %}</th>
+            <th>{% trans "Distance" %}</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>
